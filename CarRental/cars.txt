@@ -1,0 +1,191 @@
+INSERT INTO `booking_cars`(
+    `company`,
+    `model_name`,
+    `car_id`,
+    `seat`,
+    `hour_price`,
+    `type`,
+    `position`,
+    `images`
+)
+VALUES(
+    'Hyundai',
+    'i20',
+    '1',
+    '4',
+    '100',
+    'Compact',
+    'Airport,Ahmedabad',
+    'hyundai-i20.jpg'
+),(
+    'Mercedes',
+    'GLA',
+    '10',
+    '4',
+    '200',
+    'Premium',
+    'Navrangpura,Ahmedabad',
+    'mercedes-gla.jpg'
+),(
+    'Nissan',
+    'Evaliya',
+    '11',
+    '6',
+    '150',
+    'Minivan',
+    'Maninagar,Ahmedabad',
+    'nissan-evaliya.jpg'
+),(
+    'Nissan',
+    'Micra',
+    '12',
+    '4',
+    '125',
+    'Compact',
+    'Vaniyavad,Nadiad',
+    'nissan-micra.jpg'
+),(
+    'Nissan',
+    'Sunny',
+    '13',
+    '4',
+    '100',
+    'Compact',
+    'Airport,Ahmedabad',
+    'nissan-sunny.jpg'
+),(
+    'Nissan',
+    'Terrano',
+    '14',
+    '4',
+    '150',
+    'Premium',
+    'Navrangpura,Ahmedabad',
+    'nissan-terrano.jpg'
+),(
+    'Tata',
+    'Bolt',
+    '15',
+    '4',
+    '100',
+    'Compact',
+    'Maninagar,Ahmedabad',
+    'tata-bolt.jpg'
+),(
+    'Tata',
+    'Hexa',
+    '16',
+    '4',
+    '125',
+    'Premium',
+    'Vaniyavad,Nadiad',
+    'tata-hexa.jpg'
+),(
+    'Tata',
+    'Tiago',
+    '17',
+    '4',
+    '100',
+    'Compact',
+    'Airport,Ahmedabad',
+    'tata-tiago.jpg'
+),(
+    'Tata',
+    'Venture',
+    '18',
+    '8',
+    '300',
+    'Minivan',
+    'Navrangpura,Ahmedabad',
+    'tata-venture.jpg'
+),(
+    'Tata',
+    'Vista',
+    '19',
+    '4',
+    '125',
+    'Premium',
+    'Maninagar,Ahmedabad',
+    'tata-vista.jpg'
+),(
+    'Hyundai',
+    'Creta',
+    '2',
+    '4',
+    '125',
+    'Premium',
+    'Navrangpura,Ahmedabad',
+    'hyundai-creta.jpg'
+),(
+    'Tata',
+    'Zest',
+    '20',
+    '4',
+    '100',
+    'Compact',
+    'Vaniyavad,Nadiad',
+    'tata-zest.jpg'
+),(
+    'Hyundai',
+    'Elantra',
+    '3',
+    '4',
+    '100',
+    'Compact',
+    'Maninagar,Ahmedabad',
+    'hyundai-elantra.jpg'
+),(
+    'Hyundai',
+    'eon',
+    '4',
+    '4',
+    '80',
+    'Compact',
+    'Vaniyavad,Nadiad',
+    'hyundai-eon.jpg'
+),(
+    'Hyundai',
+    'i10',
+    '5',
+    '4',
+    '100',
+    'Compact',
+    'Airport,Ahmedabad',
+    'hyundai-i10.jpg'
+),(
+    'Hyundai',
+    'verna',
+    '6',
+    '4',
+    '125',
+    'Premium',
+    'Navrangpura,Ahmedabad',
+    'hyundai-verna.jpg'
+),(
+    'Hyundai',
+    'X-cent',
+    '7',
+    '4',
+    '125',
+    'Premium',
+    'Maninagar,Ahmedabad',
+    'hyundai-xcent.jpg'
+),(
+    'Mercedes',
+    'AMG',
+    '8',
+    '4',
+    '200',
+    'Luxury',
+    'Vaniyavad,Nadiad',
+    'mercedes-amg.jpg'
+),(
+    'Mercedes',
+    'Carlsson',
+    '9',
+    '4',
+    '200',
+    'Luxury',
+    'Airport,Ahmedabad',
+    'mercedes-carlsson.jpg'
+);

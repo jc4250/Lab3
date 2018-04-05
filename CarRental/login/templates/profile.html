@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%} 
+<link rel="stylesheet"  href="{%static 'profile.css'%}">
+ <html >
+ 	<body style="background-color:green">
+ 		<table width="100%" height="100%" style="background-color: white" border="1">
+ 			<tr>
+ 			<td align="left" width="14%">
+ 			<hr>
+ 			<a href="/login/editprofile/" style="width:120px; margin-left:5px;">Edit Profile</a>
+ 			<br><hr>
+ 			<a href="/booking/bookingHistory/" style="width:120px; margin-left:5px;">Booking History</a>
+ 			<br><hr>
+ 			<br><br><br><br><br><br><br><br><br><br><br>
+ 			<br><br><br><br><br><br><br><br><br><br><br><br>
+ 			<br><br><br><br><br>
+ 			</td>
+ 			<td>
+ 				<center>
+		<table>
+			<tr>
+				<font color="red" size=6> {{ msg1 }}</font><br><br>
+			</tr>
+			<tr>
+				<td> <font size=5>User Name :</font> </td>
+				<td> <font size=5>{{ username }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>First Name : </font></td>
+				<td> <font size=5>{{ fName }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Last Name : </font></td>
+				<td> <font size=5>{{ lName }} </font></td>
+			</tr>
+
+			<tr>
+				<td> <font size=5>Password : </font></td>
+				<td> <font size=5>{{ password }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Email Id: </font></td>
+				<td> <font size=5>{{ email }} </font></td>
+			</tr>
+		</table>
+		<br><br><br><br><br><br><br><br>
+	</center>
+ 			</td>
+ 			</tr>
+ 		</table>
+ 	</body>
+ </html>
+ {% endblock%}

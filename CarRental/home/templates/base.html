@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Car Rental System</title>
+ {%load static%}
+ <link rel="stylesheet"  href="{%static 'base.css'%}">
+</head>
+
+
+<body>
+    <div id="main">
+    <center><div id="logo"><p>Car Rental System</p></div></center>
+    <p align="right" style="font-size: 20px;">
+        {% if request.session.name %}
+            {{ request.session.name }} &nbsp;
+            <a style="background-color: #4CAF50;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;"
+                href="/login/profile/">Profile</a> &nbsp; 
+            <a style="background-color: #4CAF50;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;" 
+                href="/login/logout/">Logout</a> &nbsp;&nbsp;
+        {% else %}
+           Hello User &nbsp;<a style="background-color: #4CAF50;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;" href="/login">Login</a> &nbsp;
+        {% endif %}
+    </p>
+     <div id="menu">
+            <ul id="l">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/booking">Book car</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
+            </ul>
+    </div>
+    <br>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

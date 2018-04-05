@@ -1,0 +1,45 @@
+
+body{
+background:;
+height:14%;
+width:100%;
+}
+p.head{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 40px;
+	color:green;
+	font-style: bold;
+}
+form {
+  margin:0 auto;
+  width:300px
+}
+input {
+  margin-bottom:3px;
+  padding:10px;
+  width: 100%;
+  border:1px solid #CCC
+}
+table{
+	padding-left: 80px;
+}
+img {
+  border-radius: 50%;
+}
+label {
+  cursor:pointer
+}
+.team{
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 220px;
+    font-size: 18px;
+}
+#a {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ <link rel="stylesheet"  href="{%static 'login.css'%}">
+ 
+
+ 	<form  action="/booking/carlist/" method='post'>
+			{% csrf_token %}
+			
+			<table id=login align="center" width="110%" height="65%"><tr><td>
+			<center>
+			<font color="red" size=3> {{ msg1 }} </font><br>
+			</center>
+			<strong>Pick-up location:</strong><br>
+			<select name=pickup style="width: 285px; height: 25px;" required>
+				<option selected="selected" value="Airport,Ahmedabad">Ahmedabad | Ahmedabad Airport</option>
+				<option value="Navrangpura,Ahmedabad">Ahmedabad | Navrangpura</option>
+				<option value="Maninagar,Ahmedabad">Ahmedabad | Maninagar</option>
+				<option value="Vaniyavad,Nadiad">Nadiad | Vaniyavad</option>
+			</select><br><br>
+			<strong>Drop-off location:</strong><br>
+			<select name=dropoff style="width: 285px; height: 25px;" required>
+				<option selected="selected" value="Airport,Ahmedabad">Ahmedabad | Ahmedabad Airport</option>
+				<option value="Navrangpura,Ahmedabad">Ahmedabad | Navrangpura</option>
+				<option value="Maninagar,Ahmedabad">Ahmedabad | Maninagar</option>
+				<option value="Vaniyavad,Nadiad">Nadiad | Vaniyavad</option>
+			</select><br><br>
+			<strong>Pick-up Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pick-up time:</strong><br>
+			<input  id=pickup_date type="date" name="pickup_date" min="2018-04-03" style="width: 140px; height: 25px;" required>
+		<select name="pickup_time" style="width: 140px; height: 25px;" required>
+		<option value="00">12:00 AM</option>
+		<option value="01">1:00 AM</option>
+		<option value="02">2:00 AM</option>
+		<option value="03">3:00 AM</option>
+		<option value="04">4:00 AM</option>
+		<option value="05">5:00 AM</option>
+		<option value="06">6:00 AM</option>
+		<option value="07">7:00 AM</option>
+		<option value="08">8:00 AM</option>
+		<option value="09">9:00 AM</option>
+		<option value="10">10:00 AM</option>
+		<option value="11">11:00 AM</option>
+		<option selected="selected" value="12">12:00 PM</option>
+		<option value="13">1:00 PM</option>
+		<option value="14">2:00 PM</option>
+		<option value="15">3:00 PM</option>
+		<option value="16">4:00 PM</option>
+		<option value="17">5:00 PM</option>
+		<option value="18">6:00 PM</option>
+		<option value="19">7:00 PM</option>
+		<option value="20">8:00 PM</option>
+		<option value="21">9:00 PM</option>
+		<option value="22">10:00 PM</option>
+		<option value="23">11:00 PM</option>
+		</select><br><br>
+
+		<strong>Drop-off Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop-off time:</strong><br>
+			<input id="dropoff_date" type="date" name="dropoff_date" min="2018-03-20" style="width: 140px; height: 25px;" required>
+		<select name="dropoff_time" style="width: 140px; height: 25px;">
+		<option value="00">12:00 AM</option>
+		<option value="01">1:00 AM</option>
+		<option value="02">2:00 AM</option>
+		<option value="03">3:00 AM</option>
+		<option value="04">4:00 AM</option>
+		<option value="05">5:00 AM</option>
+		<option value="06">6:00 AM</option>
+		<option value="07">7:00 AM</option>
+		<option value="08">8:00 AM</option>
+		<option value="09">9:00 AM</option>
+		<option value="10">10:00 AM</option>
+		<option value="11">11:00 AM</option>
+		<option selected="selected" value="12">12:00 PM</option>
+		<option value="13">1:00 PM</option>
+		<option value="14">2:00 PM</option>
+		<option value="15">3:00 PM</option>
+		<option value="16">4:00 PM</option>
+		<option value="17">5:00 PM</option>
+		<option value="18">6:00 PM</option>
+		<option value="19">7:00 PM</option>
+		<option value="20">8:00 PM</option>
+		<option value="21">9:00 PM</option>
+		<option value="22">10:00 PM</option>
+		<option value="23">11:00 PM</option>
+		</select><br><br>
+
+		<strong>Are you want driver?</strong><br>
+		<select name="driver" style="width: 285px; height: 25px;" required>
+			<option value="yes">YES</option>
+			<option value="no">NO</option>
+		</select><br><br>
+			<input type='submit' value="Booking" style="background-color: green; color:white;">
+			</td></tr>
+		</table>
+		</form>
+
+ {% endblock%}

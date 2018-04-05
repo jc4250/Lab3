@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+<html>
+   <head>
+      <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 1500);
+          }
+
+          var images = [], x = -1;
+          images[0] = "{% static 'homephoto1.jpg'%}";
+          images[1] = "{% static 'homephoto2.jpg'%}";
+          
+      </script>
+   </head>
+
+   <body onload = "startTimer()">
+       <img id="img" src="homephoto2.jpg" width="50%" height="50%" style="display: block;margin-left: auto;margin-right: auto;margin-top: 100px" />   
+   </body>
+</html>
+{% endblock%}

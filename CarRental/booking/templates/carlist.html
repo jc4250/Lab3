@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ <link rel="stylesheet"  href="{%static 'style2.css'%}">
+ 		<center>
+		<font color="red" size=5> {{ msg }} </font><br>
+		{% for c in cars %}
+			<div class="gallery" >
+				<a href="/home/" target="_blank">
+					<img src="{% static 'gallery/' %}{{ c.images }}"  alt="{{ c.company }}" title="{{ c.company }}">
+				</a>
+				<div class="desc">
+					<center><table>
+						<tr><td colspan="2" align="center"><strong>{{ c.type }}</strong> </td> </tr>
+						<tr><td> Company : </td><td> {{ c.company }} </td> </tr>
+						<tr><td> Model Name : </td><td> {{ c.model_name }} </td> </tr>
+						<tr><td> Seat : </td><td> {{ c.seat }} </td> </tr>
+						<tr><td> Price/Hour : </td><td> {{ c.hour_price }} </td> </tr>
+						<tr><td> Available : </td><td> {{ c.availability }} </td> </tr>
+						<tr><td colspan="2" align="center">
+							<form action="/booking/bill/" method="post">{% csrf_token %}
+							<button name="book" value="{{ c.car_id }}" style="background-color: green;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;" >Book</button>
+							</form>
+						</td></tr>
+						
+					</table></center>
+				</div>
+			</div>
+			{% endfor %}
+		<br>
+
+	</center>
+ {% endblock %}

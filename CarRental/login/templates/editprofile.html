@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%} 
+<link rel="stylesheet"  href="{%static 'login.css'%}">
+ <html>
+ 	<body>
+ 		<table width="100%" height="100%" style="background-color: white" border="1">
+ 			<tr>
+ 			<td align="left" width="14%">
+ 			<hr>
+ 			<a href="/booking/bookingHistory/" style="width:120px; margin-left:5px;">Booking History</a>
+ 			<br><hr>
+ 			<br><br><br><br><br><br><br><br><br><br><br>
+ 			<br><br><br><br><br><br><br><br><br><br><br><br>
+ 			<br><br><br><br><br>
+ 			</td>
+ 			<td >
+ 				<center>
+ 		<form method="post" action="/login/profileverification/" style="width:600px">
+ 			{% csrf_token %}
+		<table>
+			<tr>
+				<font color="red" size=4> {{ msg }}</font><br><br>
+			</tr>
+			<tr>
+				<td> <font size=5>User Name:</font> </td>
+				<td> <input type="text" value="{{username}}" name="username"></td>
+			</tr>
+			<tr>
+				<td> <font size=5>First Name: </font></td>
+				<td> <input type="text" value="{{fName}}" name="fName"></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Last Name: </font></td>
+				<td> <input type="text" value="{{lName}}" name="lName"></td>
+			</tr>
+
+			<tr>
+				<td> <font size=5>Password: </font></td>
+				<td> <input type="text" value="{{password}}" name="password"></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Confirm Password: </font></td>
+				<td> <input type="text" value="{{password}}" name="cpassword"></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Email Id: </font></td>
+				<td> <input type="text" value="{{email}}" name="email"></td>
+			</tr>
+			<tr>
+ 				<td align="center"  colspan="2">
+ 					<br><br>
+ 					<input type="submit" value="Edit" class="button" style="width: 35%; background-color: green; color:white;">
+ 				</td>
+ 			</tr>
+		</table>
+		<br><br><br><br><br><br>
+	</center>
+ 			</td>
+ 			</tr>
+ 		</table>
+ 	</form>
+ 	</body>
+ </html>
+ {% endblock%}

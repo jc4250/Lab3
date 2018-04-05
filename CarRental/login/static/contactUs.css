@@ -1,0 +1,96 @@
+#contact{
+	
+}
+#head
+{ 
+	margin-left: 415px;
+	width: 100%;
+	font-size: 25px;
+    text-align: left; 
+    padding: 10px 200px;
+    background-color: green; 
+}
+#city{
+	margin-left: 10px;
+	font-style: bold;
+	font-size: 30px;
+	align-self: left;
+}
+body{
+background:;
+height:14%;
+width:100%;
+}
+p.head{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 40px;
+	color:green;
+	font-style: bold;
+}
+form {
+  margin:0 auto;
+  width:300px
+}
+input {
+  margin-bottom:3px;
+  padding:10px;
+  width: 100%;
+  border:1px solid #CCC
+}
+table{
+	padding-left: 80px;
+}
+img {
+  border-radius: 50%;
+}
+.team{
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 220px;
+    font-size: 18px;
+}
+#a {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.branch{
+	text-align: left;
+}
+.feedback{
+	padding-left: 0px;
+}
+.button {
+    background-color:green;
+    color: white;
+    width: 100px;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+.textarea{
+	width: 350px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+input[type=text] {
+    width: 350px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+

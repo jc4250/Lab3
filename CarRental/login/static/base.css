@@ -1,0 +1,59 @@
+html{
+background-size:cover;
+}
+body{
+margin:0;
+padding:0;
+font-family:Raleway;
+}
+p{
+font-style: italic,border;
+font-size:40px;
+color:white;
+}
+#main
+{
+	background-color: green;
+}
+#l
+{
+list-style-type:none;
+float:left;
+margin-top:-4%;
+margin-right:15%;
+}
+#l>li
+{
+padding:10px;
+float:left;
+}
+a:link,a:visited {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover,a:active {
+    background-color: #4CAF50;
+}
+#logo{
+color:green;
+padding-top:0%;
+padding-left:0%;
+}
+
+.submenu{
+margin-left:5%;
+margin-top:3%;
+}   
+.bustr{
+width:50%;
+}
+.busbook
+{
+width:25%;
+padding-left:5%;
+}
+

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ <link rel="stylesheet"  href="{%static 'login.css'%}">
+<html>
+	<head>
+		<title>login Page</title>
+	</head>
+	
+	<body>
+		
+			<input type='checkbox' id='form-switch'>
+			<form id='login-form' action="/login/registration/" method='post'>
+			{% csrf_token%}
+			<center>
+			<table id=login align="center" width="110%"><tr><td>
+			<center>	
+			<img src="{% static 'loginpage.png'%}" alt="Avatar" width="60px"><br>{{ error }}</center>
+			</center><br>
+			
+			<input id='names' placeholder="First name" name=fname required>
+			<input id='names' placeholder="Last name" name=lname required>
+			<input type="text" placeholder="Username" name=username required>
+			<input type="email" placeholder="Email" name=email required>
+			<input type="password" placeholder="Password" name=pass1 required>
+			<input type="password" placeholder="Re Password" name=pass2 required>
+			<input type='submit' class="button" value="Register">
+			<label for='form-switch'>Already Account ? Sign In</label>
+			</td></tr>
+		</table>
+		</form>
+		
+
+		<form id='Register-form' action="/login/verification/" method='post'>
+			{% csrf_token%}
+			<table id=login align="center" width="110%" height="65%"><tr><td>
+			<center>
+			<img src="{% static 'loginpage.png'%}" alt="Avatar" width="60px">
+			</center><br>
+			<input type="text" placeholder="Enter Username or email Id" name=username required><br><br>
+			<input type="password" placeholder="Password" name=password required><br><br>
+			<input type='submit' class="button" value="Login">
+			<label for='form-switch'><span>Register</span></label>
+			</td></tr>
+		</table>
+		</form>
+		
+	</body>
+</html>
+{% endblock %}

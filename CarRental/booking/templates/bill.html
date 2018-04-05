@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ <center>
+ <table style=" border-radius: 5px;background-color: #f2f2f2;padding: 20px;">{% csrf_token %}
+ 			<tr>
+ 				<td colspan="2" align="center"><font size=5>Booking Details</font></td><br>
+ 			</tr>
+ 			<tr>
+ 				<td colspan="2" align="center"><img src="{% static 'gallery/' %}{{ cars.images }}"  alt="{{ c.company }}" style="width: 250px;"></td>
+ 			</tr>
+			<tr>
+				<td> <strong size=4>Company </strong> </td>
+				<td> <font size=4>:{{ cars.company }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Model Name  </strong></td>
+				<td> <font size=4>:{{ cars.model_name }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Seat  </strong></td>
+				<td> <font size=4>:{{ cars.seat }} </font></td>
+				<hr>
+			</tr>
+			<tr>
+				<td> <strong size=4>Pickup-location </strong></td>
+				<td> <font size=4>:{{ pickup_location }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Pickup-Date </strong></td>
+				<td> <font size=4>:{{ pickup_date }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Pickup Time </strong></td>
+				<td> <font size=4>:{{ pickup_time }}:00 </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Dropoff-location </strong></td>
+				<td> <font size=4>:{{ dropoff_location }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Dropoff-Date </strong></td>
+				<td> <font size=4>:{{ dropoff_date }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Dropoff Time </strong></td>
+				<td> <font size=4>:{{ dropoff_time }}:00 </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Driver </strong></td>
+				<td> <font size=4>:{{ driver }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Price/Hour  </strong></td>
+				<td> <font size=4>:{{ cars.hour_price }} </font></td>
+			</tr>
+			<tr>
+				<td> <strong size=4>Total Hours </strong></td>
+				<td> <font size=4>:{{ hours }} </font></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"> <strong size=4>Total</strong>
+				<font size=4>:{% widthratio cars.hour_price 1 hours %}Rs. </font></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="/booking/book/" style="background-color: #4CAF50;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;">Book</a></td>
+				<td align="center"><a href="/booking/" style="background-color: #4CAF50;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;">Cancel</a></td>
+			</tr>
+
+		</table>
+	</center>
+  {% endblock %}

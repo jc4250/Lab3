@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ <link rel="stylesheet"  href="{%static 'contact.css'%}">
+<html>
+	<body>
+		<center>
+		<p class="head">Devloper Team</p><br>
+		</center>
+
+		<table  width="100%" >
+			<tr>
+				<td >
+					<div class="team" id=a>
+					<center><img src="{% static 'savan.jpg'%}" width="100px" height="100px">
+						<br>
+					Name:Savan Chovatiya<br><br>
+					Phone no:+917203911039<br><br>
+					Email:savanchovatiya123@gmail.com
+					</center>
+				</td>
+			
+				<td>
+					<div class="team" id=a>
+					<center>
+						<img src="{% static 'loginpage.png'%}" width="100px" height="100px">
+						<br>
+					Name:Jaydeep Chauhan<br><br>
+					Phone no:+917203911039<br><br>
+					Email:savanchovatiya123@gmail.com
+					</center>
+				</td>
+			
+				<td>
+					<div class="team" id=a>
+					<center>
+						<img src="{% static 'loginpage.png'%}" width="100px" height="100px">
+						<br>
+					Name:Divyang Chodvadiya<br><br>
+					Phone no:+917203911039<br><br>
+					Email:savanchovatiya123@gmail.com
+					</center>
+				</td>
+			</tr>	
+		</div>
+		</table>
+		
+	</body>
+</html>		
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+ {%load static%}
+ 	
+ 
+ <link rel="stylesheet"  href="{%static 'bookinghistory.css'%}">
+ 	<br><br><br>
+ 	 <font id="head" color="white">Booking History</font>
+ 	 <br><br><br>
+	{% for c in booking %}
+	<hr>
+		<table width="100%" style=" border-radius: 5px;background-color: #f2f2f2;padding: 20px;">
+			<tr>
+				<td><strong size=4>Car Id:</strong><font size=4>{{ c.car_id }}</font></td>
+				<td><strong size=4>Pickup_location:</strong><font size=4>{{ c.pickup_location }}</font></td>
+				<td><strong size=4>Pickup_date:</strong><font size=4>{{ c.pickup_date }}</font></td>
+				<td><strong size=4>Pickup_time:</strong><font size=4>{{ c.pickup_time }}:00</font></td>
+			</tr>
+			<tr>
+				<td><strong size=4>Driver:</strong><font size=4>{{ c.driver }}</font></td>
+				<td><strong size=4>Dropoff_location:</strong><font size=4>{{ c.dropoff_location }}</font></td>
+				<td><strong size=4>Dropoff_date:</strong><font size=4>{{ c.dropoff_date }}</font></td>
+				<td><strong size=4>Dropoff_time:</strong><font size=4>{{ c.dropoff_time }}:00</font></td>
+			</tr>
+				<tr>
+					<td colspan="4" align="center">
+						<form action="/booking/delete/" method="post">{% csrf_token %}
+							<button name="delete" value="{{ c.id }}" style="background-color: green;color: white; padding:10px 25px;font-size:15px;text-align:center;display:inline-block;" >Delete</button>
+						</form>
+					</td>
+			</tr>
+		</table>
+		<hr>
+		<br><br>
+	{% endfor %}
+</center>
+{% endblock %}
