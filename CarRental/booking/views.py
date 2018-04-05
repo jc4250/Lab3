@@ -1,13 +1,9 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import date
-from booking.models import Booking
-
-
-# Create your views here.
-from django.http import HttpResponse
+from .models import Booking,cars
+from django.utils.timezone import datetime
 from django.template.context_processors import csrf
-from booking.models import cars
 
 
 def booking(request):
@@ -21,6 +17,7 @@ def booking(request):
 
 def carlist(request):
     try:
+
         pickupdate = request.POST.get('pickup_date')
         dropoffdate = request.POST.get('dropoff_date')
         date1 = pickupdate.split("-")
@@ -51,8 +48,8 @@ def carlist(request):
 
 
 def bill(request):
-    car = cars.objects.get(car_id=request.POST.get('book'))
-    request.session['car_id']=request.POST.get('book')
+    car = cars.objects.get(registration_no=request.POST.get('book'))
+    request.session['registration_no']=request.POST.get('book')
     c = {
         'hours':request.session['hours'],
         'pickup_location': request.session['pickup_location'],
@@ -75,8 +72,8 @@ def book(request):
     dropoff_time= request.session['dropoff_time']
     driver= request.session['driver']
     username=request.session['name1']
-    car_id=request.session['car_id']
-    s=Booking(car_id=car_id,pickup_location=pickup_location,dropoff_location=dropoff_location,
+    registration_no=request.session['registration_no']
+    s=Booking(registration_no=registration_no,pickup_location=pickup_location,dropoff_location=dropoff_location,
               pickup_date=pickup_date,dropoff_date=dropoff_date,pickup_time=pickup_time,
               dropoff_time=dropoff_time,driver=driver,username=username)
     s.save()
@@ -88,17 +85,20 @@ def book(request):
     del request.session['pickup_time']
     del request.session['dropoff_time']
     del request.session['driver']
-    del request.session['car_id']
+    del request.session['registration_no']
     return HttpResponseRedirect('/booking/bookingHistory/')
 
 
 def bookingHistory(request):
+    c={}
     username = request.session['name1']
-    booking = Booking.objects.filter(username=username)
-    return render(request, 'bookinghistory.html', {'booking': booking,})
+    c['today'] =datetime.today().date()
+    c['booking'] = Booking.objects.filter(username=username)
+
+    return render(request, 'bookinghistory.html', c)
 
 def delete(request):
-    Booking.objects.filter(id=request.POST.get('delete')).delete()
+    Booking.objects.filter(id=request.POST.get('cancel')).delete()
     return HttpResponseRedirect('/booking/bookingHistory/')
 
 

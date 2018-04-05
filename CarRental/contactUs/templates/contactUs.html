@@ -67,8 +67,12 @@
 			<form action="/contactUs/feedback/" method="post"> {% csrf_token %}
 			<table class="feedback">
 				<tr>
-					<td> Email : </td> 
-					<td><input type="text" placeholder="Enter Email Address" name='email' required style="width:100%"></td>
+					<td> Email : </td>
+                    {% if request.session.name1 %}
+					<td><input type="text" value="{{ request.session.email }}" name='email' readonly style="width:100%"></td>
+                    {% else %}
+                    <td><input type="text" placeholder="Enter Email Address" name='email' required style="width:100%"></td>
+                    {% endif %}
 				</tr>
 				<tr>
 					<td> Feedback:</td>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, render_to_response
 from django.template.context_processors import csrf
-from login.models import register
+from .models import register
 from django.http import HttpResponse, HttpResponseRedirect
 
 
@@ -17,6 +17,7 @@ def verification(request):
         if username==i.username and password==i.password:
             request.session['name']=i.first_name+" "+i.last_name
             request.session['name1']=username
+            request.session['email']=i.email_id
             return HttpResponseRedirect('/home/')
     else:
         return render(request,'invalid.html')
@@ -27,6 +28,7 @@ def registration(request):
     lastname = request.POST.get('lname')
     username = request.POST.get('username')
     email = request.POST.get('email')
+    request.session['email']=email
     pass1 = request.POST.get('pass1')
     pass2 = request.POST.get('pass2')
     for i in register.objects.all():

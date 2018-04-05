@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
-    'about.apps.AboutConfig',
     'contactUs.apps.ContactusConfig',
     'booking.apps.BookingConfig',
     'django.contrib.admin',
@@ -81,7 +80,7 @@ WSGI_APPLICATION = 'CarRental.wsgi.application'
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'tariq',
+    'NAME': 'anmol',
     'USER': 'root',
     'PASSWORD':'',
     'HOST':'localhost',

@@ -1,9 +1,15 @@
-from django.shortcuts import render, render_to_response
-from contactUs.models import Feedback
+from django.shortcuts import render
+from django.template.context_processors import csrf
+from .models import Feedback
 
 
-def contactUs(request):
+def contact(request):
     return render(request, 'contactUs.html')
+
+def about(request):
+    c = {}
+    c.update(csrf(request))
+    return render(request, 'contact.html', c)
 
 def feedback(request):
     email = request.POST.get('email', '')

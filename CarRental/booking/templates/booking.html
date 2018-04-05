@@ -26,7 +26,25 @@
 				<option value="Vaniyavad,Nadiad">Nadiad | Vaniyavad</option>
 			</select><br><br>
 			<strong>Pick-up Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pick-up time:</strong><br>
-			<input  id=pickup_date type="date" name="pickup_date" min="2018-04-03" style="width: 140px; height: 25px;" required>
+                <input  id="datefield" type="date" name="pickup_date" style="width: 140px; height: 25px;" required onload="setMinDate()">
+                    <script>
+                        setMinDate();
+                        function setMinDate(){
+                            var today = new Date();
+                            var dd = today.getDate();
+                            var mm = today.getMonth()+1; //January is 0!
+                            var yyyy = today.getFullYear();
+                            if(dd<10){
+                                dd='0'+dd
+                            }
+                            if(mm<10){
+                                mm='0'+mm
+                            }
+                            today = yyyy+'-'+mm+'-'+dd;
+                            document.getElementById("datefield").setAttribute("min", today);
+                        }
+                    </script>
+
 		<select name="pickup_time" style="width: 140px; height: 25px;" required>
 		<option value="00">12:00 AM</option>
 		<option value="01">1:00 AM</option>
@@ -83,7 +101,7 @@
 		<option value="23">11:00 PM</option>
 		</select><br><br>
 
-		<strong>Are you want driver?</strong><br>
+		<strong>Do you want driver?</strong><br>
 		<select name="driver" style="width: 285px; height: 25px;" required>
 			<option value="yes">YES</option>
 			<option value="no">NO</option>
